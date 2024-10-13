@@ -16,7 +16,7 @@ app.get("/", (req: any, res: any) => {
     },
     {
       id: 3,
-      name: "Ishaan Pudasaini",
+      name: "Ishaan Pudasainii",
     },
   ]);
 });
