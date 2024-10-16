@@ -1,0 +1,20 @@
+version: "3.8" # specify docker-compose version
+services: # services to run
+  api: # one container called api
+    build: ./api # build from Dockerfile in api directory
+    container_name: api_c # name of container
+    ports:
+      - "9000:9000" # map port 5000 on host to port 5000 in api_c
+    volumes:
+      - ./api:/app # mount api directory to /app in api_c
+      - /app/node_modules # mount node_modules directory to /app/node_modules in api_c
+  front-end:
+    build: ./front-end
+    container_name: front-end_c
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./front-end:/app # Mount front-end folder to /app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true

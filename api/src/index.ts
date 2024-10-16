@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 
 const app = express();
-const PORT: number | string = process.env.PORT || 3000;
+const PORT: number | string = process.env.PORT || 9000;
 app.use(cors());
 app.get("/", (req: any, res: any) => {
   return res.json([
@@ -16,7 +16,15 @@ app.get("/", (req: any, res: any) => {
     },
     {
       id: 3,
-      name: "Ishaan Pudasainii",
+      name: "Ishaan Pudasaini",
+    },
+    {
+      id: 4,
+      name: "Himal Aire",
+    },
+    {
+      id: 5,
+      name: "Roshi Lama",
     },
   ]);
 });
